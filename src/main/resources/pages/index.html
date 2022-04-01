@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation web service</title>
+</head>
+<body>
+    <h1>Translation web service</h1>
+    <hr>
+    <form th:action="@{/translate}" method="post">
+        <p>Enter target language (ru, en) to translate <input type="text" name="targetLang"/></p>
+        <p>Enter source language (ru, en) to translate <input type="text" name="sourceLang"/></p>
+        <p>Enter text to translate <input type="text" name="text"/></p>
+        <p><input type="submit" value="translate"/></p>
+    </form>
+
+</body>
+</html>
