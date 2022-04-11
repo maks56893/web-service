@@ -2,11 +2,11 @@ package com.models.service;
 
 import java.util.List;
 
-public class TranslatedResponseDao {
+public class TranslatedResponseModel {
 
     private List<String> text;
 
-    public TranslatedResponseDao(List<String> text) {
+    public TranslatedResponseModel(List<String> text) {
         this.text = text;
     }
 

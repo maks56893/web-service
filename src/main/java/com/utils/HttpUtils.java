@@ -25,7 +25,6 @@ public final class HttpUtils {
 
     public static String getRequestIP(HttpServletRequest request) {
         for (String header : IP_HEADERS) {
-
             String value = request.getHeader(header);
 
             if (value == null || value.isEmpty()) {

@@ -1,21 +1,19 @@
 package com.yandx_client_new;
 
-import com.models.yandex.YandxTranslateDao;
+import com.models.yandex.YandxTranslateModel;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-@Component
 public class YandxTranslationClient {
 
     private static final String API_KEY = "Api-Key AQVNzeS-_b0_EkQTP3KID2b1tlCvbdrsAOsePbcn";
     static RestTemplate restTemplate = new RestTemplate();
 
-    public static YandxTranslateDao translate(String sourceLang, String targetLang, String text) {
+    public static YandxTranslateModel translate(String sourceLang, String targetLang, String text) {
         HttpHeaders header = new HttpHeaders();
         header.set("Authorization", API_KEY);
         header.setContentType(MediaType.APPLICATION_JSON);
@@ -36,6 +34,6 @@ public class YandxTranslationClient {
         HttpEntity<String> request = new HttpEntity<>(jsonRequest.toString(), header);
 
         return restTemplate.postForObject(
-                "https://translate.api.cloud.yandex.net/translate/v2/translate", request, YandxTranslateDao.class);
+                "https://translate.api.cloud.yandex.net/translate/v2/translate", request, YandxTranslateModel.class);
     }
 }

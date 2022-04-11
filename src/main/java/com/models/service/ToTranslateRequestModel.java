@@ -1,21 +1,21 @@
 package com.models.service;
 
-public class ToTranslateRequestDao {
+public class ToTranslateRequestModel {
 
     private String text;
     private String sourceLang;
     private String targetLang;
 
-    public ToTranslateRequestDao() {
+    public ToTranslateRequestModel() {
     }
 
-    public ToTranslateRequestDao(String text, String sourceLang, String targetLang) {
+    public ToTranslateRequestModel(String text, String sourceLang, String targetLang) {
         this.text = text;
         this.sourceLang = sourceLang;
         this.targetLang = targetLang;
     }
 
-    public ToTranslateRequestDao(ToTranslateRequestDao request) {
+    public ToTranslateRequestModel(ToTranslateRequestModel request) {
         this.text = request.getText();
         this.sourceLang = request.getSourceLang();
         this.targetLang = request.targetLang;
